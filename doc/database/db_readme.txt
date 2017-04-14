@@ -1,9 +1,10 @@
 
-TOPIC: recorder_id-机台号
+TOPIC: <recorder_id>-机台号
+/v1.0/recorder/<recorder_id>/update/speci  --3.1	设备规格
 /v1.0/recorder/<recorder_id>/update/para  --3.2	塑机工艺
 /v1.0/recorder/<recorder_id>/update/state  --3.3	塑机状态：
 /v1.0/recorder/<recorder_id>/add/shot --3.4	生产数据:
-/v1.0/recorder/<recorder_id>/add/event --3.5	事件信息:、报警信息
+/v1.0/recorder/<recorder_id>/add/event --3.5	事件信息:报警信息/操作模式
 /v1.0/recorder/<recorder_id>/update/move --3.6	动作曲线:
 
 
@@ -27,8 +28,8 @@ JSON_DATA
 ID
 MACHINE_SN
 ALARM_KEY
-ALARM_BEGINTIME
-ALARM_ENDTIME
+BEGINTIME
+ENDTIME
 ALARM_INTERVAL
 
 (2)操作模式记录表 IPHM_OPMODE  
