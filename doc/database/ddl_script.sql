@@ -231,4 +231,24 @@ create unique index PK_IPHM_STANDSTILL_LOG_ID on IPHM_STANDSTILL_LOG (ID);
 create index IDX_IPHM_STANDSTILL_LOG_SN on IPHM_STANDSTILL_LOG (MACHINE_SN);
 create index IDX_IPHM_STANDSTILL_LOG_REASON on IPHM_STANDSTILL_LOG (REASON_ID);
 
+--12、机器在线记录表
+create table IPHM_MACHINE_ONLINE
+(
+  ID               NUMBER        not null,
+  MACHINE_SN       VARCHAR2(16)  not null,
+  ONLINE_TIME      DATE,
+  OFFLINE_TIME     DATE,
+  LAST_INTERVAL    INT
+);
+
+comment on table IPHM_MACHINE_ONLINE is '机器在线记录表';
+comment on column IPHM_MACHINE_ONLINE.ID is '序号，取自序列PHM_SEQ';
+comment on column IPHM_MACHINE_ONLINE.MACHINE_SN is '机台编号';
+comment on column IPHM_MACHINE_ONLINE.ONLINE_TIME is '上线时间';
+comment on column IPHM_MACHINE_ONLINE.OFFLINE_TIME is '下线时间'; 
+comment on column IPHM_MACHINE_ONLINE.LAST_INTERVAL is '在线时长，单位秒'; 
+
+create unique index PK_IPHM_MACHINE_ONLINE_ID on IPHM_MACHINE_ONLINE (ID);
+create index IDX_IPHM_MACHINE_ONLINE_SN on IPHM_MACHINE_ONLINE (MACHINE_SN);
+
 
